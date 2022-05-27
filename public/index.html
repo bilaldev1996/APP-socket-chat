@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-in</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-sm-6">
+
+            <h1 class="text-center">Google Sign-in</h1>
+            <hr>
+        
+            <div id="g_id_onload"
+                data-client_id="17446439379-kqf3snf6vn2pf03jl647h83ho20dhvr3.apps.googleusercontent.com"
+                data-auto_prompt="false"
+                data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left">
+            </div>
+            <button id="google_signout" class="btn btn-primary mt-2">
+                Signout
+            </button>
+
+        </div>
+
+        <div class="col-sm-6">
+            <h1 class="text-center">Login</h1>
+            <hr>
+            <form class="d-grid" id="formulario">
+                <input type="text" name="correo" class="form-control mb-2" placeholder="Introduzca tu correo" required>
+                <input type="password" name="password" class="form-control mb-2" placeholder="Introduzca tu password" required>
+                <button class="btn btn-primary" type="submit">
+                    Entrar
+                </button>
+            </form>
+        </div>
+
+        <div class="col">
+            Si no estás registrado, hazlo aquí
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+                Registrate
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalRegistroLabel">Registrarse</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="miFormulario">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                        <label for="nombre">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="correo" placeholder="name@example.com" required>
+                        <label for="correo">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 ">Enviar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./js/auth.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>
